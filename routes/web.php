@@ -1,7 +1,17 @@
 <?php
 
+use App\Http\Controllers\ContatosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
+// Rota de contato. O  name('contatos.index'); batiza o nome de uma rota.. é obrigatório.
+
+Route::get ('/contatos', [ContatosController::class, 'index']) -> name('contatos.index');
+
+// ROTA DELETE 
+
+Route::delete('/contatos/{contatosID}', [ContatosController::class, 'delete']) -> name('contatos.delete');
 
 Route::get('/', function () {
     return view('welcome');

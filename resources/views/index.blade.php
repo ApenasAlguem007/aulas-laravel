@@ -15,7 +15,7 @@
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet"
+    <link href="{{ asset("css/bootstrap.min.css")}}" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT">
       
 
