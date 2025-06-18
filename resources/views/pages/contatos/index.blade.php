@@ -14,7 +14,7 @@
         
         <button>Pesquisar</button>
 
-        <a type="button" href="" class="btn btn-success float-end"> Incluir </a>
+        <a type="button" href="{{ route('contatos.create.get') }}" class="btn btn-success float-end"> Incluir </a>
 
     </form>
 
