@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contatos;
+use App\Http\Requests\FormRequestContatos;
 
 class ContatosController extends Controller
 {
@@ -20,7 +21,7 @@ class ContatosController extends Controller
 
     }
 
-    public function create(Request $request){
+    public function create(FormRequestContatos $request){
 
         //condicional para o entendimento do envid dos dados para o banco de dados
         if($request->method() == "POST"){

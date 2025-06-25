@@ -13,7 +13,13 @@
 <div class="mb-3">
 
 <label class="form-label"> Nome</label>
-<input type="text" class="form-control" name="nome">
+<input type="text" class="form-control @error('nome') is-invalid @enderror" name="nome">
+
+@if ($errors->has ('nome'))
+
+<div class="invalid-feedback">O campo nome é obrigatório.</div>
+
+@endif
 
 </div>
 
@@ -21,7 +27,13 @@
 <div class="mb-3">
 
 <label class="form-label"> Telefone</label>
-<input type="text" class="form-control" name="numero">
+<input type="text" id="telefoneMask"  class="form-control @error ('numero') is-invalid @enderror" name="numero">
+
+@if ($errors->has ('numero'))
+
+<div class="invalid-feedback">O campo telefone é obrigatório, de 10 à 11 digitos.</div>
+
+@endif
 
 </div>
 
@@ -30,7 +42,13 @@
 <div class="mb-3">
 
 <label class="form-label"> E-mail</label>
-<input type="text" class="form-control" name="email">
+<input type="text" class="form-control  @error ('email') is-invalid @enderror" name="email" id="email">
+
+@if ($errors->has ('email'))
+
+<div class="invalid-feedback">O campo e-mail é obrigatório, exemplo: teste@teste.com</div>
+
+@endif
 
 </div>
 

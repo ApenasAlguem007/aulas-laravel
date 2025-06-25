@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
- 
+
 <head>
-   
+
     <!-- Referenciado o arquivo Javascript do Public -->
     <script src="{{ asset("js/color-modes.js") }}"></script>
- 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -13,34 +13,34 @@
     <meta name="generator" content="Astro v5.7.10">
     <title>Dashboard Template · Bootstrap v5.3</title>
 
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="{{ asset("css/bootstrap.min.css")}}" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT">
-      
 
-        <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ asset("icons/apple-touch-icon.png") }}sizes="180x180">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{{ asset("icons/apple-touch-icon.png") }}sizes=" 180x180">
 
     <link rel="icon" href="{{ asset("icons/favicon-32x32") }}" sizes="32x32" type="image/png">
 
     <link rel="icon" href="{{ asset("icons/favicon-16x16") }}" sizes="16x16" type="image/png">
-   
+
     <link rel="mask-icon" href="{{ asset("icons/safari-pinned-tab.svg") }}" color="#712cf9">
 
     <link rel="icon" href="{{ asset("icons/favicon.ico") }}">
 
     <meta name="theme-color" content="#712cf9">
 
-    
+
     <!-- Customizando o estilo do template -->
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    
+
     <link href="dashboard.css" rel="stylesheet">
 
-<link href=" {{ asset("css/dashboard.css") }}  " rel="stylesheet">
+    <link href=" {{ asset("css/dashboard.css") }}  " rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -50,13 +50,13 @@
             -moz-user-select: none;
             user-select: none
         }
- 
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem
             }
         }
- 
+
         .b-example-divider {
             width: 100%;
             height: 3rem;
@@ -65,25 +65,25 @@
             border-width: 1px 0;
             box-shadow: inset 0 .5em 1.5em #0000001a, inset 0 .125em .5em #00000026
         }
- 
+
         .b-example-vr {
             flex-shrink: 0;
             width: 1.5rem;
             height: 100vh
         }
- 
+
         .bi {
             vertical-align: -.125em;
             fill: currentColor
         }
- 
+
         .nav-scroller {
             position: relative;
             z-index: 2;
             height: 2.75rem;
             overflow-y: hidden
         }
- 
+
         .nav-scroller .nav {
             display: flex;
             flex-wrap: nowrap;
@@ -94,7 +94,7 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch
         }
- 
+
         .btn-bd-primary {
             --bd-violet-bg: #712cf9;
             --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -110,22 +110,22 @@
             --bs-btn-active-bg: #5a23c8;
             --bs-btn-active-border-color: #5a23c8
         }
- 
+
         .bd-mode-toggle {
             z-index: 1500
         }
- 
+
         .bd-mode-toggle .bi {
             width: 1em;
             height: 1em
         }
- 
+
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important
         }
     </style>
 </head>
- 
+
 <body> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
             <path
@@ -250,20 +250,39 @@
     </header>
     <div class="container-fluid">
         <div class="row">
-           
+
             <!-- Incluindo parcial Nav -->
             @include ("components.navegacao")
 
-                </div>
-            </div>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-              <!-- Traz conteudo de views -->
-                @yield("content")
-    
-            </main>
         </div>
     </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <!-- Traz conteudo de views -->
+        @yield("content")
+
+    </main>
+    </div>
+    </div>
+
+
+    <!-- bibliotca Jquery para alert e mascara -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <!-- Biblioteca Jquery Máscara -->
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    
+    <script src="{{asset("js/projeto.js")}}"></script>
+
+
+    <!--  . . . .   -->
+
     <script src="{{ asset("js/bootstrap.bundle.min.js") }}"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         class="astro-vvvwv3sm"></script>
@@ -273,6 +292,5 @@
         class="astro-vvvwv3sm"></script>
     <script src="{{ asset("js/dashboard.js") }}" class="astro-vvvwv3sm"></script>
 </body>
- 
+
 </html>
- 
