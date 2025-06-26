@@ -5,7 +5,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
-// Rota de contato. O  name('contatos.index'); batiza o nome de uma rota.. é obrigatório.
+
+
+// Rota de contato. O  name('contatos.index'); batiza o nome de uma rota.. é obrigatório. 
+
+//  Rota de contato - Read
 
 Route::get ('/contatos', [ContatosController::class, 'index']) -> name('contatos.index');
 
@@ -22,6 +26,16 @@ Route::get('/contatos/create', [ContatosController::class, 'create']) -> name('c
 Route::post('/contatos/create', [ContatosController::class, 'create']) -> name('contatos.create.post');
 
 
+// Rota de Update - método get 
+
+Route::get ('/contatos/update/{contatoID}', [ContatosController::class,'update'])->name('contatos.update.get');
+
+
+//  Rota de Update - método Post
+
+Route::put ('/contatos/update/{contatoID}', [ContatosController::class,'update'])->name('contatos.update.put');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,6 +45,7 @@ Route::get('/index', function(){
     return view('index');
 
 });
+
 
 
 

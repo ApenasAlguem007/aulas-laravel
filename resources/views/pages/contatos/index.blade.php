@@ -7,16 +7,19 @@
 <h1 class="h1"> Contatos </h1>
 </div>
 
+
 <div>
-    <form action="" method="GET">
+    <form action="{{ route('contatos.index') }}" method="GET">
     
         <input type="text" name="pesquisar" placeholder="Digite para Buscar" />
         
-        <button>Pesquisar</button>
+        <button type="submit">Pesquisar</button>
 
         <a type="button" href="{{ route('contatos.create.get') }}" class="btn btn-success float-end"> Incluir </a>
 
     </form>
+
+
 
     <div class="table-responsive mt-4">
 
@@ -50,7 +53,7 @@
             <!-- Botão de Delete -->
 
             <td>
-                <form action={{ route('contatos.delete', $contato->id) }} method="POST">
+                <form style="display:inline"  action="{{ route('contatos.delete', $contato->id)}}"method="POST">
 
                 @csrf 
                 @method('DELETE')
@@ -60,9 +63,17 @@
                 </button>
 
                 </form>
+
+                <form style="display:inline" action="{{ route ('contatos.update.get', $contato->id)}}" method="POST" >
+
+                @csrf
+                @method('GET')
+                
+                <button type="submit" class="btn btn-primary btn-sm"> Alterar </button>
+
+                </form>
                 
             </td>
-
 
         </tr>
         
